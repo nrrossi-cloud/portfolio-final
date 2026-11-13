@@ -1,0 +1,104 @@
+/* Configuración básica de la página */
+body {
+    background-color: #121620; /* Fondo oscuro gamer */
+    color: #ffffff;            /* Texto blanco */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto; /* Centra el contenido en la pantalla */
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #9945ff; /* Color morado para el título principal */
+}
+
+/* Cajas de los formularios (Separados en secciones) */
+section {
+    background-color: #1c2230; /* Gris oscuro para resaltar el formulario */
+    padding: 25px;
+    margin-bottom: 35px;
+    border: 1px solid #333d52;
+}
+
+h2 {
+    color: #00c8ff; /* Color celeste para los subtítulos */
+    margin-top: 0;
+}
+
+/* Agrupaciones visuales dentro del registro */
+fieldset {
+    border: 1px solid #444b5e;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend {
+    color: #9945ff;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+/* Estilo para los títulos de cada campo */
+label {
+    display: block; /* Hace que el título se coloque arriba del campo */
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/* Estilo unificado para los campos de texto, selectores y áreas de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #0d1117; /* Fondo más oscuro para los inputs */
+    color: #ffffff;
+    border: 1px solid #444b5e;
+    box-sizing: border-box; /* Evita que los inputs se salgan de los bordes */
+}
+
+/* Evita que los botones de opciones circulares o cuadrados se rompan en líneas separadas */
+.opcion-inline {
+    display: inline;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Botones grandes de envío */
+button {
+    background-color: #9945ff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Cambio de color básico cuando pasas el ratón sobre el botón */
+button:hover {
+    background-color: #7a22e0;
+}

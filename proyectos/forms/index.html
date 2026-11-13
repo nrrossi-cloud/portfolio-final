@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jueguitos.com - Registro Gamer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Jueguitos.com</h1>
+        <p>¡Crea tu cuenta de jugador y únete a la comunidad de PC!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Registro</h2>
+            
+            <form action="https://formspree.io/f/xzdwwbpj" method="POST" autocomplete="on">
+                
+                <fieldset>
+                    <legend>Datos Obligatorios de la Cuenta</legend>
+                    
+                    <label for="reg-nombre">Nombre Completo:</label>
+                    <input type="text" id="reg-nombre" name="nombre_completo" placeholder="Ej. Juan Pérez" autocomplete="name" required minlength="3" maxlength="70">
+
+                    <label for="reg-usuario">Nombre de Usuario (5 a 12 caracteres alfanuméricos):</label>
+                    <input type="text" id="reg-usuario" name="usuario" placeholder="Ej. player123" autocomplete="username" required pattern="^[a-zA-Z0-9]{5,12}$" title="El usuario debe tener de 5 a 12 letras o números, sin espacios ni símbolos.">
+
+                    <label for="reg-correo">Correo Electrónico:</label>
+                    <input type="email" id="reg-correo" name="correo" placeholder="correo@ejemplo.com" autocomplete="email" required>
+
+                    <label for="reg-clave">Contraseña:</label>
+                    <input type="password" id="reg-clave" name="contrasena" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required minlength="8">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ubicación y Edad</legend>
+
+                    <label for="reg-fecha">Fecha de Nacimiento:</label>
+                    <input type="date" id="reg-fecha" name="fecha_nacimiento" autocomplete="bday" required>
+
+                    <label for="reg-edad">Edad (Mínimo 13 años):</label>
+                    <input type="number" id="reg-edad" name="edad" placeholder="Ej. 18" min="13" max="120" required>
+
+                    <label for="reg-pais">País:</label>
+                    <select id="reg-pais" name="pais" autocomplete="country" required>
+                        <option value="">-- Selecciona tu país --</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="España">España</option>
+                        <option value="México">México</option>
+                        <option value="Perú">Perú</option>
+                    </select>
+
+                    <label for="reg-ciudad">Ciudad de residencia:</label>
+                    <input type="text" id="reg-ciudad" name="ciudad" list="lista-ciudades" placeholder="Escribe tu ciudad" autocomplete="address-level2" required>
+                    <datalist id="lista-ciudades">
+                        <option value="Buenos Aires">
+                        <option value="Santiago">
+                        <option value="Bogotá">
+                        <option value="Madrid">
+                        <option value="Ciudad de México">
+                        <option value="Lima">
+                    </datalist>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferencias del Perfil</legend>
+
+                    <p>Género:</p>
+                    <input type="radio" id="gen-masc" name="genero" value="Masculino" required>
+                    <label for="gen-masc" class="opcion-inline">Masculino</label>
+                    
+                    <input type="radio" id="gen-fem" name="genero" value="Femenino">
+                    <label for="gen-fem" class="opcion-inline">Femenino</label>
+                    
+                    <input type="radio" id="gen-otro" name="genero" value="Otro">
+                    <label for="gen-otro" class="opcion-inline">Otro / Prefiero no decirlo</label>
+
+                    <p>Intereses / Géneros Favoritos:</p>
+                    <input type="checkbox" id="int-fps" name="interes_fps" value="Si">
+                    <label for="int-fps" class="opcion-inline">Acción / FPS</label>
+                    <br>
+                    <input type="checkbox" id="int-rpg" name="interes_rpg" value="Si">
+                    <label for="int-rpg" class="opcion-inline">Estrategia / RPG</label>
+                    <br>
+                    <input type="checkbox" id="int-indie" name="interes_indie" value="Si">
+                    <label for="int-indie" class="opcion-inline">Juegos Indie</label>
+
+                    <label for="reg-bio">Biografía corta (Máximo 200 letras):</label>
+                    <textarea id="reg-bio" name="biografia" rows="3" placeholder="Cuéntanos un poco sobre ti o tu PC..." maxlength="200"></textarea>
+                </fieldset>
+
+                <button type="submit" aria-label="Enviar formulario para crear tu cuenta">Registrarse en Jueguitos.com</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Soporte</h2>
+            
+            <form action="https://formspree.io/f/xzdwwbpj" method="POST">
+                
+                <label for="sop-nombre">Nombre:</label>
+                <input type="text" id="sop-nombre" name="soporte_nombre" placeholder="Tu nombre" autocomplete="name" required minlength="2">
+
+                <label for="sop-correo">Email de contacto:</label>
+                <input type="email" id="sop-correo" name="soporte_email" placeholder="correo@ejemplo.com" autocomplete="email" required>
+
+                <label for="sop-motivo">Motivo de contacto:</label>
+                <select id="sop-motivo" name="soporte_motivo" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="Error en un juego">Error o Bug en la página</option>
+                    <option value="Problema con la cuenta">Problemas con mi cuenta</option>
+                    <option value="Sugerencia">Tengo una sugerencia</option>
+                </select>
+
+                <label for="sop-mensaje">Mensaje detallado:</label>
+                <textarea id="sop-mensaje" name="soporte_mensaje" rows="4" placeholder="Explica aquí tu problema..." required minlength="10" maxlength="1000"></textarea>
+
+                <br>
+                <input type="checkbox" id="sop-terminos" name="soporte_aceptar_terminos" value="Aceptado" required>
+                <label for="sop-terminos" class="opcion-inline">Acepto los términos y condiciones de soporte.</label>
+                <br><br>
+
+                <button type="submit" aria-label="Enviar ticket de soporte técnico">Enviar Mensaje de Ayuda</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jueguitos.com - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

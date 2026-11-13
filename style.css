@@ -1,0 +1,68 @@
+/* --- ESTILOS GENERALES Y FONDO DE LA PÁGINA --- */
+body {
+  background-color: ¿´¿#def5ea !important; 
+  color: #333333;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Imagen de perfil del Header */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; 
+  border: 5px solid #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra divisora estética (abajo de los títulos de sección) */
+.custom-hr {
+  width: 80px;
+  height: 4px;
+  background-color: #0d6efd;
+  border: none;
+  opacity: 1;
+  margin: 15px auto 35px auto;
+}
+
+/* --- LÍNEAS SEPARADORAS DE SECCIONES (MÁS NOTORIAS) --- */
+.portfolio-section,
+.about-section,
+.contact-section {
+  padding: 60px 0 !important;
+  /* Línea más gruesa (3px) y de un color gris oscuro bien definido */
+  border-top: 3px solid #b0bec5 !important; 
+}
+
+/* --- ESTILIZACIÓN DE IMÁGENES Y TARJETAS DEL PORTFOLIO --- */
+.portfolio-card {
+  overflow: hidden; 
+  border-radius: 15px; 
+  background-color: #ffffff !important; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 240px; 
+  object-fit: cover; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto visual al pasar el mouse por encima de la tarjeta */
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- ESTILOS DEL FOOTER --- */
+.footer-icon {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: #0d6efd;
+}
