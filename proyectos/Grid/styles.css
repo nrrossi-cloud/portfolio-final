@@ -1,0 +1,60 @@
+/* Estilos para el contenedor de la galería */
+.galeria {
+    display: grid; /* */
+    
+    /* Mantenemos la línea mágica obligatoria de la consigna */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* */
+    
+    grid-gap: 20px; /* Espacio de 20px entre las tarjetas */
+    padding: 20px; 
+    background-color: #f4f6f7; 
+}
+
+/* Estilos para las tarjetas de productos */
+.item {
+    background-color: white; 
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    
+    display: flex;
+    flex-direction: column; 
+}
+
+/* MODIFICACIÓN: Achicamos el tamaño de las imágenes */
+.item img {
+    width: 100%;
+    height: 140px; /* Reducido de 200px a 140px para que ocupe menos espacio */
+    object-fit: cover; /* Mantiene la proporción sin deformar la foto */
+}
+
+/* Contenedor para el texto del producto */
+.info-producto {
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaciado interno ordenado entre título, descripción y precio */
+}
+
+.info-producto h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+/* NUEVO: Estilo para la descripción del producto */
+.info-producto .descripcion {
+    margin: 0;
+    font-size: 0.85rem; /* Letra un poco más chica para jerarquía visual */
+    color: #7f8c8d; /* Color gris suave para el texto secundario */
+    line-height: 1.3; /* Espaciado entre líneas para mejor lectura */
+}
+
+.info-producto .precio {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #27ae60; 
+    font-weight: bold;
+    margin-top: auto; /* Empuja el precio siempre hacia el fondo de la tarjeta */
+}
