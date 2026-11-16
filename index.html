@@ -3,222 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Profesional - Nicolas Rossi</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Nicolas Rossi | Desarrollo web</title>
+  <meta name="description" content="Portfolio de Nicolas Rossi, alumno de St. Brendan's College: juegos en JavaScript, tienda online, formularios y CSS Grid.">
+  <meta property="og:title" content="Nicolas Rossi | Desarrollo web">
+  <meta property="og:image" content="foto.jpeg">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#proyectos">Saltar al contenido</a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Nicolas Rossi</a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="menuNavegacion">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre-mi">Acerca de mí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header class="text-center py-5">
-    <div class="container py-4">
-      <img src="foto.jpeg" alt="Foto de perfil de Nicolas Rossi" class="rounded-circle profile-img mb-4">
-      <h1 class="display-4 fw-bold mb-2">Nicolas Rossi</h1>
-      <p class="fs-5 text-muted mb-4">Alumno 5MF • Desarrollo Web</p>
-      <a href="#portfolio" class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm hero-btn">
-        Explorar proyectos <i class="bi bi-arrow-down-short"></i>
-      </a>
-    </div>
+  <header class="top">
+    <a class="logo" href="#inicio">N. Rossi</a>
+    <nav aria-label="Principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <section id="portfolio" class="portfolio-section">
-    <div class="container">
-      <h2 class="text-center fw-bold">Mi Portfolio</h2>
-      <div class="custom-hr"></div>
-      
-      <div class="row g-4 mt-2 justify-content-center">
-        
-        <!-- Proyecto 1: Adivina el color -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/Adivina el color/index.html" target="_blank" class="img-wrapper">
-              <img src="color-game.png" class="portfolio-img card-img-top" alt="Adivina el color">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">The Great Guessing Game</h5>
-              <p class="text-muted card-text small flex-grow-1">Juego interactivo para adivinar colores en formato RGB con modos Easy y Hard.</p>
-              <a href="proyectos/Adivina el color/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 2: E-commerce -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/E-commerce/index.html" target="_blank" class="img-wrapper">
-              <img src="logo-melchor.png" class="portfolio-img card-img-top" alt="E-commerce">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">La Quesería de Melchor</h5>
-              <p class="text-muted card-text small flex-grow-1">Catálogo de productos y diseño web responsivo para tienda online.</p>
-              <a href="proyectos/E-commerce/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3: Piedra, papel o tijera -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/Piedra papel o tijera/index.html" target="_blank" class="img-wrapper">
-              <img src="ppot.jpg" class="portfolio-img card-img-top" alt="Piedra papel o tijera">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">Piedra, Papel o Tijera</h5>
-              <p class="text-muted card-text small flex-grow-1">Clásico juego interactivo contra la computadora con marcador en tiempo real.</p>
-              <a href="proyectos/Piedra papel o tijera/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 4: Lista de Súper -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/Lista super/index.html" target="_blank" class="img-wrapper">
-              <img src="f6dbeb17951cb9d12c450eb26e42e484.jpg" class="portfolio-img card-img-top" alt="Lista super">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">Lista de Supermercado</h5>
-              <p class="text-muted card-text small flex-grow-1">Aplicación práctica para agregar, tachar y gestionar ítems en una lista.</p>
-              <a href="proyectos/Lista super/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 5: Formularios -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/forms/index.html" target="_blank" class="img-wrapper">
-              <img src="images.jpg" class="portfolio-img card-img-top" alt="Formularios">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">Formularios de Jueguitos.com</h5>
-              <p class="text-muted card-text small flex-grow-1">Interfaz de registro de usuarios y soporte técnico para plataforma web.</p>
-              <a href="proyectos/forms/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 6: Grid -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 border-0 portfolio-card">
-            <a href="proyectos/grid/index.html" target="_blank" class="img-wrapper">
-              <img src="que-es-un-grid.png" class="portfolio-img card-img-top" alt="Proyecto Grid">
-            </a>
-            <div class="card-body text-center d-flex flex-column">
-              <h5 class="fw-bold mb-2">Galería CSS Grid</h5>
-              <p class="text-muted card-text small flex-grow-1">Maquetado moderno y estructuración de grillas visuales responsivas.</p>
-              <a href="proyectos/grid/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-3 fw-semibold project-btn">
-                Ver proyecto <i class="bi bi-arrow-up-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
+  <main>
+    <section id="inicio" class="hero">
+      <div class="cross" aria-hidden="true"><i class="cx"></i><i class="cy"></i><b class="cr"></b></div>
+      <div class="hero-text">
+        <h1>Nicolas Rossi</h1>
+        <dl class="facts">
+          <div><dt>Curso</dt><dd>5MF, St. Brendan's College</dd></div>
+          <div><dt>Próximo paso</dt><dd>Ingeniería Industrial, UdeSA</dd></div>
+          <div><dt>Herramientas</dt><dd>HTML, CSS, JavaScript, Git</dd></div>
+        </dl>
+        <a class="btn" href="#proyectos">Ver proyectos</a>
       </div>
-    </div>
-  </section>
+      <figure class="photo">
+        <img src="foto.jpeg" alt="Foto de Nicolas Rossi" width="320" height="320">
+      </figure>
+    </section>
 
-  <section id="sobre-mi" class="about-section">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8">
-          <h2 class="fw-bold">Acerca de mí</h2>
-          <div class="custom-hr"></div>
-          <div class="about-box p-4 p-md-5 rounded-4">
-            <p class="lead text-muted mb-0">
-              Soy Nicolas Rossi, alumno del colegio St. Brendan's College. Voy a estudiar Ingeniería Industrial en UdeSA y me apasiona combinar la resolución de problemas con el desarrollo web.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="contact-section">
-    <div class="container">
-      <h2 class="text-center fw-bold">Contacto</h2>
-      <div class="custom-hr"></div>
-      
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-          <div class="card p-4 p-md-5 border-0 contact-card">
-            <form action="https://formspree.io/f/xgogobkk" method="POST">
-              <div class="mb-3">
-                <label for="nombre" class="form-label fw-semibold">Tu Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="name" required placeholder="Ingresa tu nombre">
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label fw-semibold">Tu Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" required placeholder="nombre@correo.com">
-              </div>
-              <div class="mb-4">
-                <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
-                <textarea class="form-control" id="mensaje" name="message" rows="4" required placeholder="Escribe tu consulta aquí..."></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Enviar Correo</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-dark text-white py-4 border-top border-secondary">
-    <div class="container">
-      <div class="row align-items-center">
-        
-        <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
-          <p class="mb-0">&copy; 2026 Nicolas Rossi. Todos los derechos reservados.</p>
-          <small class="text-secondary">Creado en 2026</small>
-        </div>
-        
-        <div class="col-12 col-md-6 text-center text-md-end">
-          <a href="https://github.com/nrrossi-cloud" target="_blank" class="footer-icon me-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://linkedin.com/" target="_blank" class="footer-icon me-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="mailto:nicorossi1705@gmail.com" class="footer-icon" title="Enviar un correo" aria-label="Correo">
-            <i class="bi bi-envelope-fill"></i>
+    <section id="proyectos" class="block">
+      <h2>Proyectos</h2>
+      <ul class="projects">
+        <li>
+          <a href="proyectos/Adivina%20el%20color/index.html" target="_blank" rel="noopener">
+            <img src="color-game.png" alt="" loading="lazy">
+            <div>
+              <h3>The Great Guessing Game</h3>
+              <p>Adiviná el color a partir de su código RGB. Tiene modos Easy y Hard.</p>
+              <span class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> The Great Guessing Game</span></span>
           </a>
-        </div>
-        
+        </li>
+        <li>
+          <a href="proyectos/E-commerce/index.html" target="_blank" rel="noopener">
+            <img src="logo-melchor.png" alt="" loading="lazy">
+            <div>
+              <h3>La Quesería de Melchor</h3>
+              <p>Catálogo de productos y diseño responsivo para una tienda online.</p>
+              <span class="stack"><span>HTML</span><span>CSS</span><span>Bootstrap</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> La Quesería de Melchor</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="proyectos/Piedra%20papel%20o%20tijera/index.html" target="_blank" rel="noopener">
+            <img src="ppot.jpg" alt="" loading="lazy">
+            <div>
+              <h3>Piedra, Papel o Tijera</h3>
+              <p>El clásico contra la computadora, con marcador en tiempo real.</p>
+              <span class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> Piedra, Papel o Tijera</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="proyectos/Lista%20super/index.html" target="_blank" rel="noopener">
+            <img src="f6dbeb17951cb9d12c450eb26e42e484.jpg" alt="" loading="lazy">
+            <div>
+              <h3>Lista de Supermercado</h3>
+              <p>Agregá, tachá y eliminá ítems de tu lista de compras.</p>
+              <span class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> Lista de Supermercado</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="proyectos/forms/index.html" target="_blank" rel="noopener">
+            <img src="images.jpg" alt="" loading="lazy">
+            <div>
+              <h3>Formularios de Jueguitos.com</h3>
+              <p>Registro de usuarios y soporte técnico para una plataforma web.</p>
+              <span class="stack"><span>HTML</span><span>CSS</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> Formularios de Jueguitos.com</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="proyectos/grid/index.html" target="_blank" rel="noopener">
+            <img src="que-es-un-grid.png" alt="" loading="lazy">
+            <div>
+              <h3>Galería CSS Grid</h3>
+              <p>Grillas visuales responsivas armadas con CSS Grid.</p>
+              <span class="stack"><span>HTML</span><span>CSS Grid</span></span>
+            </div>
+            <span class="go">Abrir<span class="visually-hidden"> Galería CSS Grid</span></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <section id="sobre-mi" class="block narrow">
+      <h2>Sobre mí</h2>
+      <p class="lead">Soy alumno de St. Brendan's College y el año próximo voy a estudiar Ingeniería Industrial en UdeSA. Me gusta encontrar la manera más simple de resolver un problema, y el desarrollo web es donde mejor lo practico: cada proyecto empieza con una necesidad concreta y termina en algo que se puede usar.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section id="contacto" class="block narrow">
+      <h2>Contacto</h2>
+      <p>Escribime por acá o directo a <a href="mailto:nicorossi1705@gmail.com">nicorossi1705@gmail.com</a>.</p>
+      <form id="formContacto" action="https://formspree.io/f/xyewelob" method="POST">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="name" type="text" required autocomplete="name">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="message" rows="4" required></textarea>
+        <button class="btn" type="submit">Enviar mensaje</button>
+        <p id="estadoForm" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="sheet">
+      <div><small>Dibujó</small>Nicolas Rossi</div>
+      <div><small>Hoja</small>1 de 1</div>
+      <div><small>Año</small>2026</div>
+      <div class="links"><small>Enlaces</small>
+        <a href="https://github.com/nrrossi-cloud" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <!-- TODO: poné la URL de tu perfil, ej: https://www.linkedin.com/in/tu-usuario -->
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:nicorossi1705@gmail.com" aria-label="Enviar un correo"><i class="bi bi-envelope-fill"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+    const form = document.getElementById('formContacto');
+    const estado = document.getElementById('estadoForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const boton = form.querySelector('button');
+      boton.disabled = true;
+      estado.className = 'status';
+      estado.textContent = 'Enviando...';
+      try {
+        const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error();
+        form.reset();
+        estado.classList.add('ok');
+        estado.textContent = 'Mensaje enviado. Te respondo a la brevedad.';
+      } catch {
+        estado.classList.add('error');
+        estado.textContent = 'No se pudo enviar. Probá de nuevo o escribime por correo.';
+      } finally {
+        boton.disabled = false;
+      }
+    });
+  </script>
+  <script>
+    // Mira de coordenadas en la portada (solo con mouse y sin "reducir movimiento")
+    const hero = document.querySelector('.hero');
+    const lectura = hero.querySelector('.cr');
+    if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = Math.round(e.clientX - r.left), y = Math.round(e.clientY - r.top);
+        hero.style.setProperty('--x', x + 'px');
+        hero.style.setProperty('--y', y + 'px');
+        lectura.textContent = 'x ' + x + '  y ' + y;
+        hero.classList.add('on');
+      });
+      hero.addEventListener('mouseleave', () => hero.classList.remove('on'));
+    }
+  </script>
+  <script>
+    // Los proyectos aparecen a medida que se hace scroll
+    const tarjetas = document.querySelectorAll('.projects li');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entradas) => {
+        entradas.forEach((en) => {
+          if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      tarjetas.forEach((t) => obs.observe(t));
+    } else {
+      tarjetas.forEach((t) => t.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
