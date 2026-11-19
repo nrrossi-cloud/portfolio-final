@@ -1,106 +1,159 @@
-// Variables globales
 let numSquares = 6;
 let colors = [];
 let pickedColor;
+let fiftyUsed = false;
+let dominantUsed = false;
 
-// Selectores del DOM
 const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById("colorDisplay");
-const messageDisplay = document.querySelector("#message");
-const h1 = document.querySelector("h1");
-const resetButton = document.querySelector("#reset");
+const messageDisplay = document.getElementById("message");
+const header = document.getElementById("header");
+const resetButton = document.getElementById("reset");
 const modeButtons = document.querySelectorAll(".mode");
+const fiftyBtn = document.getElementById("fiftyBtn");
+const dominantBtn = document.getElementById("dominantBtn");
 
-// Inicia el juego
 init();
 
 function init() {
   setupModeButtons();
   setupSquares();
+  setupFiftyFifty();
+  setupDominantHint();
+  resetButton.addEventListener("click", reset);
   reset();
 }
 
-// Configura los botones Easy y Hard (DRY)
 function setupModeButtons() {
-  for (let i = 0; i < modeButtons.length; i++) {
-    modeButtons[i].addEventListener("click", function () {
-      modeButtons[0].classList.remove("selected");
-      modeButtons[1].classList.remove("selected");
+  modeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      modeButtons.forEach((b) => b.classList.remove("selected"));
       this.classList.add("selected");
 
-      // Operador ternario para definir cantidad de cuadrados
-      this.textContent === "Easy" ? (numSquares = 3) : (numSquares = 6);
+      const mode = this.textContent;
+      if (mode === "Easy") {
+        numSquares = 3;
+      } else if (mode === "Hard") {
+        numSquares = 6;
+      } else {
+        numSquares = 9;
+      }
+
       reset();
     });
-  }
+  });
 }
 
-// Configura los eventos de clic en cada cuadrado
+function setupDominantHint() {
+  dominantBtn.addEventListener("click", () => {
+    if (dominantUsed) return;
+
+    const [r, g, b] = pickedColor.match(/\d+/g).map(Number);
+    const max = Math.max(r, g, b);
+    const winners = [];
+
+    if (r === max) winners.push("Rojo");
+    if (g === max) winners.push("Verde");
+    if (b === max) winners.push("Azul");
+
+    const label = winners.length === 1
+      ? `Predomina: ${winners[0]}`
+      : `Empate: ${winners.join(" y ")}`;
+
+    messageDisplay.textContent = `🎨 ${label}`;
+    messageDisplay.style.color = "#7c3aed";
+
+    dominantUsed = true;
+    dominantBtn.disabled = true;
+  });
+}
+
+function setupFiftyFifty() {
+  fiftyBtn.addEventListener("click", () => {
+    if (fiftyUsed) return;
+
+    const activeWrongSquares = Array.from(squares).filter(
+      (sq, i) =>
+        colors[i] &&
+        !sq.classList.contains("wrong") &&
+        sq.style.backgroundColor !== pickedColor
+    );
+
+    const toRemove = Math.ceil(activeWrongSquares.length / 2);
+    activeWrongSquares
+      .sort(() => Math.random() - 0.5)
+      .slice(0, toRemove)
+      .forEach((sq) => sq.classList.add("wrong"));
+
+    fiftyUsed = true;
+    fiftyBtn.disabled = true;
+    messageDisplay.textContent = "Comodín 50/50 usado";
+    messageDisplay.style.color = "#059669";
+  });
+}
+
 function setupSquares() {
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("click", function () {
+  squares.forEach((square) => {
+    square.addEventListener("click", function () {
       const clickedColor = this.style.backgroundColor;
 
       if (clickedColor === pickedColor) {
         messageDisplay.textContent = "¡Correcto!";
-        resetButton.textContent = "Play Again";
+        messageDisplay.style.color = "#16a34a";
+        resetButton.textContent = "¿Jugar de nuevo?";
+        fiftyBtn.disabled = true;
+        dominantBtn.disabled = true;
         changeColors(clickedColor);
-        h1.style.backgroundColor = clickedColor;
+        header.style.background = clickedColor;
       } else {
-        this.style.backgroundColor = "#232323";
-        messageDisplay.textContent = "Intentalo nuevamente";
+        this.classList.add("wrong");
+        messageDisplay.textContent = "Intenta de nuevo";
+        messageDisplay.style.color = "#dc2626";
       }
     });
-  }
+  });
 }
 
-// Reinicia el tablero según el modo seleccionado
 function reset() {
   colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
-  colorDisplay.textContent = pickedColor;
+  colorDisplay.textContent = pickedColor.toUpperCase();
   resetButton.textContent = "Nuevos Colores";
   messageDisplay.textContent = "";
-  h1.style.backgroundColor = "steelblue";
+  header.style.background = "linear-gradient(135deg, #2563eb, #1d4ed8)";
 
-  for (let i = 0; i < squares.length; i++) {
+  fiftyUsed = false;
+  fiftyBtn.disabled = false;
+
+  dominantUsed = false;
+  dominantBtn.disabled = false;
+
+  squares.forEach((square, i) => {
+    square.classList.remove("wrong");
     if (colors[i]) {
-      squares[i].style.display = "block";
-      squares[i].style.backgroundColor = colors[i];
+      square.style.display = "block";
+      square.style.backgroundColor = colors[i];
     } else {
-      squares[i].style.display = "none";
+      square.style.display = "none";
     }
-  }
+  });
 }
 
-// Evento del botón reiniciar / nuevos colores
-resetButton.addEventListener("click", function () {
-  reset();
-});
-
-// Cambia todos los cuadrados al color ganador
 function changeColors(color) {
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = color;
-  }
+  squares.forEach((square) => {
+    square.classList.remove("wrong");
+    square.style.backgroundColor = color;
+  });
 }
 
-// Elige un color aleatorio dentro del arreglo colors
 function pickColor() {
-  const random = Math.floor(Math.random() * colors.length);
-  return colors[random];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// Genera un arreglo de N colores aleatorios
 function generateRandomColors(num) {
-  const arr = [];
-  for (let i = 0; i < num; i++) {
-    arr.push(randomColor());
-  }
-  return arr;
+  return Array.from({ length: num }, () => randomColor());
 }
 
-// Genera un string "rgb(r, g, b)" aleatorio
 function randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);

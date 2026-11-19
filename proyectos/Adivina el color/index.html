@@ -3,34 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Great Guessing Game</title>
+  <title>The Great Color Guessing Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>
-    The Great 
-    <br>
-    <span id="colorDisplay">RGB</span> 
-    <br>
-    Guessing Game
-  </h1>
+  <header id="header">
+    <div class="header-content">
+      <span class="subtitle">Desafío Visual</span>
+      <h1>The Great <br><span id="colorDisplay">RGB(255, 255, 255)</span><br> Guessing Game</h1>
+    </div>
+  </header>
 
-  <div id="stripe">
-    <button id="reset">Nuevos Colores</button>
-    <span id="message"></span>
-    <button class="mode">Easy</button>
-    <button class="mode selected">Hard</button>
-  </div>
+  <nav class="stripe">
+    <div class="stripe-container">
+      <button id="reset">Nuevos Colores</button>
+      
+      <span id="message"></span>
 
-  <div id="container">
+      <div class="mode-group">
+        <!-- Grupo de Ayuda con cartel arriba -->
+        <div class="control-block">
+          <span class="group-label">Ayuda</span>
+          <div class="group-buttons">
+            <button id="dominantBtn" class="btn-dominant" title="Muestra qué color (Rojo, Verde o Azul) predomina en la mezcla">🎨 Dominante</button>
+            <button id="fiftyBtn" class="btn-lifeline" title="Elimina la mitad de los colores incorrectos">🎯 50/50</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Grupo de Dificultad con cartel arriba para mantener simetría -->
+        <div class="control-block">
+          <span class="group-label">Dificultad</span>
+          <div class="group-buttons">
+            <button class="mode">Easy</button>
+            <button class="mode selected">Hard</button>
+            <button class="mode">Imposible</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
-  </div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </main>
 
   <script src="script.js"></script>
 </body>
